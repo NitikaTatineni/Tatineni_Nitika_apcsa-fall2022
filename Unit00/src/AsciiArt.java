@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name - Nitika
+//Name - Nitika Tatineni
 //Date - 8/18/2022
 //Class - AP CSA
-//Lab  - Unit 00
+//Lab  - AsciiArt
 
 public class AsciiArt
 {
