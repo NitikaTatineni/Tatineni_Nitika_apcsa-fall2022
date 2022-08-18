@@ -48,6 +48,8 @@ public class Variables
 		System.out.println("*32 bit - floatOne = "+floatOne+"\t\t*");
 		System.out.println("*64 bit - doubleOne = "+doubleOne+"\t\t*");
 		System.out.println("*16 bit unsigned- charOne = "+charOne+"\t\t*");
+		System.out.println("*16 bit - booleanOne = "+booleanOne+"\t\t*");
+		System.out.println("*16 bit - StringOne = "+StringOne+"\t\t*");
 
 
 
