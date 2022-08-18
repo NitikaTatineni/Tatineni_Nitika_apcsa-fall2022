@@ -1,10 +1,10 @@
 //� A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/18/2022
+//Class - AP CSA
+//Lab  - Stars and Stripes
 
 import static java.lang.System.*;
 
