@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/19/2022
+//Class - AP CSA
+//Lab  - MPH Runner
 
 import java.util.Scanner; 
 import static java.lang.System.*;
@@ -27,8 +27,8 @@ public class MPHRunner
 
 		MilesPerHour test = new MilesPerHour(dist, hrs, mins);
 		test.calcMPH();
-		test.print();
-		
+		//test.print(test.toString());
+		System.out.print(test.toString());
 		//add more test cases
 		
 		

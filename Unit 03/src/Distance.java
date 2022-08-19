@@ -1,10 +1,10 @@
 //(c) A+ Computer Science 
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/19/2022
+//Class - AP CSA
+//Lab  - Distance
 
 import java.util.Scanner; 
 import static java.lang.System.*;
@@ -17,18 +17,31 @@ public class Distance
 
 	public Distance()
 	{
+		xOne = 0;
+		yOne = 0;
+		xTwo = 0;
+		yTwo = 0;
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
 	{
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void calcDistance()
 	{
+		distance = sqrt((xOne-xTwo)*(xOne-xTwo) + (yOne-yTwo)*(yOne-yTwo));
 	}
 	
 	public double getDistance()
@@ -44,6 +57,6 @@ public class Distance
 
 	public String toString()
 	{
-		return "";
+		return "distance == " + String.format("%.3f", distance);
 	}
 }

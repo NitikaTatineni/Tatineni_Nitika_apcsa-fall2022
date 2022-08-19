@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/19/2022
+//Class - AP CSA
+//Lab  - Miles Per Hour
 
 import java.util.Scanner; 
 import static java.lang.System.*;
@@ -23,14 +23,21 @@ public class MilesPerHour
 
 	public MilesPerHour(int dist, int hrs, int mins)
 	{
+		distance = dist;
+		hours = hrs;
+		minutes = mins;
 	}
 
 	public void setNums(int dist, int hrs, int mins)
 	{
+		distance = dist;
+		hours = hrs;
+		minutes = mins;
 	}
 
 	public void calcMPH()
 	{
+		mph = Math.round((distance)/(hours + (minutes/60.0)));
 	}
 
 	public void print()
@@ -41,6 +48,6 @@ public class MilesPerHour
 	
 	public String toString()
 	{
-		return "";
+		return distance + " miles in " + hours + " hours and " + minutes + " minutes = " + mph + " MPH.";
 	}
 }
