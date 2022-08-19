@@ -1,12 +1,12 @@
 //(c) A+ Computer Science
 // www.apluscompsci.com
-//Name -
-//Date -
+//Name - Nitika Tatineni
+//Date - 08/19/2022
 
 public class Cube
 {
 	public static double area( int side )
 	{
-		return 0;
+		return 6*(side)*(side);
 	}
 }

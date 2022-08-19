@@ -1,7 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Nitika Tatineni
+//Date - 08/19/2022
 
 public class CubeRunner
 {
