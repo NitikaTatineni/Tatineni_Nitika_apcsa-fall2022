@@ -27,8 +27,8 @@ public class MPHRunner
 
 		MilesPerHour test = new MilesPerHour(dist, hrs, mins);
 		test.calcMPH();
+		
 		System.out.print(test);
-		//add more test cases
 		
 		
 	}
