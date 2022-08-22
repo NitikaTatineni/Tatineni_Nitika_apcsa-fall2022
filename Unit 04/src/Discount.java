@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name - 
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/22/2022
+//Class - AP CSA
+//Lab  - Discount
 
 import static java.lang.System.*;
 import java.util.Scanner;
