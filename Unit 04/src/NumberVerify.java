@@ -12,6 +12,9 @@ public class NumberVerify
 {
 	public static boolean isOdd( int num )
 	{
+		if (num < 0) {
+			num = -1 * num;
+		}
 		if (num % 2 == 0) {
 			return false;	
 		}
@@ -21,6 +24,9 @@ public class NumberVerify
 	}
 	public static boolean isEven( int num )
 	{
+		if (num < 0) {
+			num = -1 * num;
+		}
 		if (num % 2 == 1) {
 			return false;	
 		}
