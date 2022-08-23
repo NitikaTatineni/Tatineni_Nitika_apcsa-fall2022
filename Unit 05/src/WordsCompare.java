@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/23/2022
+//Class - AP CSA
+//Lab  - Words Compare
 
 import static java.lang.System.*;
 
@@ -15,19 +15,25 @@ public class WordsCompare
 
 	public WordsCompare()
 	{
+		wordOne = "";
+		wordTwo = "";
 	}
 
 	public WordsCompare(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void setWords(String one, String two)
 	{
-
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void compare()
 	{
+		compare = wordOne.compareTo(wordTwo);
 	}
 
 	public String toString()
