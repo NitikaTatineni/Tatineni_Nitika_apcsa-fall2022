@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Nitika Tatineni
+//Date - 08/23/2022
+//Class - AP CSA
+//Lab  - String Equality
 
 import static java.lang.System.*;
 
@@ -14,23 +14,39 @@ public class StringEquality
 
 	public StringEquality()
 	{
+		wordOne = "";
+		wordTwo = "";
 	}
 
 	public StringEquality(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void setWords(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public boolean checkEquality( )
 	{
-		return false;
+		if (wordOne.equals(wordTwo)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public String toString()
 	{
-		return wordOne + " does not have the same letters as " + wordTwo + "\n";
+		if (checkEquality()) {
+			return wordOne + " has the same letters as " + wordTwo + "\n";
+		}
+		else {
+			return wordOne + " does not have the same letters as " + wordTwo + "\n";
+		}
 	}
 }
