@@ -13,7 +13,14 @@ public class StringRunner
 {
 	public static void main ( String[] args )
 	{
-		StringOddorEven = new StringOddorEven();
+		Scanner keyboard = new Scanner(System.in);
+		out.print("Enter a word :: ");
 		
+		String word = keyboard.next();
+		
+		StringOddOrEven test = new StringOddOrEven(word);
+		
+		test.isEven();
+		out.println(test.toString());
 	}
 }
