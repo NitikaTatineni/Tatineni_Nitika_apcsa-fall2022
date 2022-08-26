@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name
+//Name: Nitika Tatineni
 
 import static java.lang.System.*; 
 
