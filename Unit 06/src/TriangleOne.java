@@ -26,14 +26,17 @@ public class TriangleOne
 	public void print( )
 	{
 	}
+		
 	
 	public String toString() {
 		
+		String tempWord = "";
 		int n = word.length();
 		while (n > 0) {
-			return word.substring(0,n);
-			n = n - 1;
+			tempWord += word.substring(0,n);
+			tempWord += "\n";
+			n--;
 		}
-		return word;
+		return tempWord;
 	}
 }
