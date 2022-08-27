@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Nitika Tatineni
 
 import static java.lang.System.*;
 
@@ -11,10 +11,15 @@ public class LetterRemover
 
 	public LetterRemover()
 	{
-		//call set
+		sentence = "";
+		lookFor = ' ';
 	}
 
 	//add in second constructor
+	public LetterRemover(String s, char rem) {
+		sentence = s;
+		lookFor = rem;
+	}
 	
 	
 	public void setRemover(String s, char rem)
@@ -25,12 +30,20 @@ public class LetterRemover
 
 	public String removeLetters()
 	{
-		String cleaned=sentence;
+		String cleaned = "";
+		int n = sentence.length();
+		int i = 0;
+		while (i < n) {
+			if(!sentence.substring(i, i+1).equals(""+lookFor)) {
+				cleaned += sentence.substring(i, i+1);
+			}
+			i=i+1;
+		}
 		return cleaned;
 	}
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor;
+		return sentence + " - letter to remove " + lookFor + "\n" + removeLetters();
 	}
 }
