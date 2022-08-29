@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 // www.apluscompsci.com
-//Name -  
+//Name -  Nitika Tatineni
 
 import java.util.Scanner;
 import static java.lang.System.*;
@@ -12,6 +12,8 @@ public class RockPaperScissors
 
 	public RockPaperScissors()
 	{
+		playChoice = "";
+		compChoice = "";
 	}
 
 	public RockPaperScissors(String player)
