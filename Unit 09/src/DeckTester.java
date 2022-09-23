@@ -9,6 +9,17 @@ public class DeckTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		String[] r0= {};
+		String[] s0= {};
+		int[]v0 = {};
+		
+		Deck d0 = new Deck(r0,s0,v0);
+		System.out.print("Deck Zero is empty: " + d0.isEmpty() + "\n");
+		System.out.print("Deck Zero size: " + d0.size() + "\n");
+		System.out.print("Deck Zero dealt card is: " + d0.deal() +"\n");
+		System.out.println(d0.toString() + "\n");
+		
+		
 		String[] r1 = {"Ace", "2", "3", "4"};
 		String[] s1 = {"Clubs", "Spades"};
 		int[] v1 = {1,2,3,4};
@@ -52,6 +63,7 @@ public class DeckTester {
 		Deck s = new Deck(sr,ss,sv);
 		System.out.print("Standard Deck is empty: " + s.isEmpty() + "\n");
 		System.out.print("Standard Deck size: " + s.size() + "\n");
+		System.out.print("Standard Deck dealt card is: " + s.deal() +"\n");
 		System.out.println(s.toString() + "\n");
 		
 		System.out.println("Shuffled Deck: " + "\n");
