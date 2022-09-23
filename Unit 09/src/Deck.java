@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Array;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -32,14 +31,13 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		cards = new List<Card>();
+		cards = new Card[ranks.length * suits.length];
 		for (int i=0; i<ranks.length; i++)
 			for (int j=0; j<suits.length; j++) {
-				Card card1 = new Card(ranks[i], suits[i], values[i]);
-				cards.add(card1);
+				cards[suits.length*i+j]= new Card(ranks[i], suits[j], values[i]);
 			}
-		}
-		size = cards.size();
+		size = cards.length;
+		//shuffle();
 	}
 
 
@@ -67,6 +65,12 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int i=size-1; i>0; i--) {
+			int k = (int)((i+1)*Math.random());
+			Card c = cards[i];
+			cards[k]=cards[i];
+			cards[i]=c;
+		}
 	}
 
 	/**
@@ -76,12 +80,11 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if(isEmpty()) {
-			return null;
+		if(size>0) {
+			size--;
+			return cards[size];
 		}
-		size--;
-		Card s = cards.get(size);
-		return s;
+		return null;
 	}
 
 	/**
@@ -93,7 +96,7 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards.get(k);
+			rtn = rtn + cards[k];
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -104,12 +107,12 @@ public class Deck {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.size() - 1; k >= size; k--) {
-			rtn = rtn + cards.get(k);
+		for (int k = cards.length - 1; k >= size; k--) {
+			rtn = rtn + cards[k];
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.size()) % 2 == 0) {
+			if ((k - cards.length) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
