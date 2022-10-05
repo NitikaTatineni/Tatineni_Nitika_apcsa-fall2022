@@ -8,8 +8,12 @@ public class ToyRunner
 {
 	public static void main(String[] args)
 	{
-		Toy s = new Toy("Monopoly");
-		s.setCount(3);
+		Toy s = new Toy("sorry");
+		s.setCount(1);
 		System.out.println(s);
+		
+		Toy n = new Toy("gi joe");
+		n.setCount(5);
+		System.out.println(n);
 	}
 }
