@@ -11,18 +11,18 @@ public class Toy
 
 	public Toy()
 	{
-		name = "";
-		count = 0;
+		setName("");
+		setCount(0);
 	}
 
 	public Toy( String nm )
 	{
-		name = nm;
+		setName(nm);
 	}
 	
 	public int getCount()
 	{
-		return 0;
+		return count;
 	}
 	
 	public void setCount( int cnt )
@@ -32,7 +32,7 @@ public class Toy
 	
 	public String getName()
 	{
-		return null;
+		return name;
 	}
 	
 	public void setName( String nm )
