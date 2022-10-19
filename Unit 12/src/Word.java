@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Nitika Tatineni
 
 import static java.lang.System.*;
 
@@ -10,15 +10,21 @@ public class Word implements Comparable<Word>
 
 	public Word( String s )
 	{
+		word = s;
 	}
 
 	public int compareTo( Word rhs )
 	{		
-		return 0;
+		if(word.length() == rhs.word.length()) 
+			return word.compareTo(rhs.word);
+		else if (word.length() > rhs.word.length())
+			return 1;
+		else
+			return -1;
 	}
 
 	public String toString()
 	{
-		return "";
+		return word;
 	}
 }
