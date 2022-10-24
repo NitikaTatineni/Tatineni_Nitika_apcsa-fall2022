@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Arrays;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private Card[] cards;
+	private List<Card> cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -31,13 +32,14 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		cards = new Card[ranks.length * suits.length];
+		cards = new ArrayList <Card>();
 		for (int i=0; i<ranks.length; i++)
 			for (int j=0; j<suits.length; j++) {
-				cards[suits.length*i+j]= new Card(ranks[i], suits[j], values[i]);
+				int k = suits.length*i+j;
+				cards.add(new Card(ranks[i],suits[j],values[i]));
 			}
-		size = cards.length;
-		//shuffle();
+		size = cards.size();
+		shuffle();
 	}
 
 
@@ -65,12 +67,13 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		for (int i=size-1; i>0; i--) {
-			int k = (int)((i+1)*Math.random());
-			Card c = cards[i];
-			cards[k]=cards[i];
-			cards[i]=c;
+		for (int i=cards.size()-1; i>0; i--) {
+			int k = (int)(i*Math.random());
+			Card c = cards.get(k);
+			cards.set(k,cards.get(i));
+			cards.set(i,c);
 		}
+		size = cards.size();
 	}
 
 	/**
@@ -82,7 +85,7 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if(size>0) {
 			size--;
-			return cards[size];
+			return cards.get(size);
 		}
 		return null;
 	}
@@ -96,7 +99,7 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -107,12 +110,12 @@ public class Deck {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.length - 1; k >= size; k--) {
-			rtn = rtn + cards[k];
+		for (int k = cards.size() - 1; k >= size; k--) {
+			rtn = rtn + cards.get(k);
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.length) % 2 == 0) {
+			if ((k - cards.size()) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
