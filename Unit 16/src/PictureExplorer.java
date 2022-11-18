@@ -800,14 +800,19 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("beach.jpg");
+    Picture pix = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/beach.jpg");
     pix.explore();
     
-    Picture pix1 = new Picture("swan.jpg");
+    Picture pix1 = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/swan.jpg");
     pix1.explore();
     
-    Picture pix2 = new Picture("koala.jpg");
+    Picture pix2 = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/koala.jpg");
     pix2.explore();
+    
+    Picture p = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/kitten2.jpg");
+    Picture smallP = p.scale(0.25,0.25);
+    smallP.write("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/kitten2.jpg");
+    smallP.explore();
   }
   
 }
