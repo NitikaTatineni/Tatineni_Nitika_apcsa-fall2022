@@ -152,6 +152,19 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testEncodeAndDecode()
+  {
+	  Picture original = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/temple.jpg");
+	  original.explore();
+	  
+	  Picture hide = new Picture("/Users/nitika/Desktop/APCSA/Tatineni_Nitika_apcsa-fall2022/Unit 16/src/images/msg.jpg");
+
+	  original.encode(hide);
+	  original.explore();
+	  Picture msg1 = original.decode();
+	  msg1.explore();
+  }
+  
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -161,7 +174,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 //    testZeroBlue();
-//    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
 //    testKeepOnlyRed();
 //    testKeepOnlyGreen();
 //    testNegate();
@@ -183,7 +196,7 @@ public class PictureTester
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
-    //testEncodeAndDecode();
+    testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);

@@ -454,17 +454,43 @@ public class Picture extends SimplePicture
 	  Pixel currPixel = null;
 	  Pixel messagePixel = null;
 	  int count = 0;
+	  int num = 0;
 	  for (int row = 0; row < this.getHeight(); row++) {
 		  for (int col = 0; col < this.getWidth(); col++) {
-  // if the current pixel red is odd make it even
 			  currPixel = currPixels[row][col];
-			  if (currPixel.getRed() % 2 == 1)
-				  currPixel.setRed(currPixel.getRed() - 1);
 			  messagePixel = messagePixels[row][col];
+			  
+			  currPixel.setBlue(Math.round(currPixel.getBlue()/5) * 5); //round all blue pixels down to nearest 5
+			  
+			  int rfact = 0;
+			  for (int i=1; i<=currPixel.getRed(); i++) {
+				  rfact=rfact*i;
+			  }
+			  int cfact = 0;
+			  for (int i=1; i<=currPixel.getGreen(); i++) {
+				  cfact=cfact*i;
+			  }
+			  int fact = 0;
+			  for (int i=1; i<=(currPixel.getRed()-currPixel.getGreen()); i++) {
+				  fact = fact*i;
+			  }
+			  
 			  if (messagePixel.colorDistance(Color.BLACK) < 50)
 			  {
-				  currPixel.setRed(currPixel.getRed() + 1);
 				  count++;
+				  
+				  int add = 1;
+				  if (cfact !=0 && fact != 0 ) {
+					  int comb = ((rfact)/(cfact*fact));
+					  add = (comb % 4); //add = 1,2,3,4
+				  }
+				  
+				  if (currPixel.getBlue()+add < 255) {
+					  currPixel.setBlue(currPixel.getBlue()+add);
+				  }
+				  else {
+					  currPixel.setBlue(currPixel.getBlue()-add);
+				  }
 			  }
 		  }
 	  }
@@ -492,7 +518,28 @@ public class Picture extends SimplePicture
 		  {
 			  currPixel = pixels[row][col];
 			  messagePixel = messagePixels[row][col];
-			  if (currPixel.getRed() % 2 == 1)
+			  
+			  int rfact = 0;
+			  for (int i=1; i<=currPixel.getRed(); i++) {
+				  rfact=rfact*i;
+			  }
+			  int cfact = 0;
+			  for (int i=1; i<=currPixel.getGreen(); i++) {
+				  cfact=cfact*i;
+			  }
+			  int fact = 0;
+			  for (int i=1; i<=(currPixel.getRed()-currPixel.getGreen()); i++) {
+				  fact = fact*i;
+			  }
+			  
+			  int add = 1;
+			  int comb = 1;
+			  if (cfact !=0 && fact != 0 ) {
+				  comb = ((rfact)/(cfact*fact));
+				  add = (comb % 4); //add = 1,2,3,4
+			  }
+			  
+			  if (currPixel.getBlue() % 5 == add)
 			  {
 				  messagePixel.setColor(Color.BLACK);
 				  count++;
